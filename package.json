@@ -1,0 +1,22 @@
+{
+  "name": "amazon-automation-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iandav/amazon-automation-testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iandav/amazon-automation-testing/issues"
+  },
+  "homepage": "https://github.com/iandav/amazon-automation-testing#readme",
+  "devDependencies": {
+    "cypress": "^9.3.1"
+  }
+}
