@@ -4,7 +4,7 @@
 Basic automation testing to verify main functionalities of the [Amazon](https://www.amazon.com/-/es/) homepage using Cypress & Mocha. 
 
 ## Scope
-The purpose of this project is to peform low level functional testing verifying the following:
+The purpose of this project is to peform low level functional and E2E testing by verifying the following:
 - Application loads correctly.
 - URL is correct.
 - Important elements are present with expected text values.
