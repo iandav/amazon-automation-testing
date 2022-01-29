@@ -7,6 +7,8 @@ class Homepage {
         navbarLogo: () => cy.get("#nav-logo-sprites"),
         navbarLocation: () => cy.get("#nav-global-location-popover-link"),
         navbarSearch: () => cy.get("#nav-search"),
+        navbarSearchCategory: () => cy.get("#searchDropdownBox"),
+        navbarGo: () => cy.get('#nav-search-submit-button'),
         navbarLanguage: () => cy.get("#icp-nav-flyout"),
         navbarAccount: () => cy.get("#nav-link-accountList"),
         navbarOrders: () => cy.get("#nav-orders"),

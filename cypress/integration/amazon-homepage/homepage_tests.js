@@ -9,7 +9,7 @@ describe("Testing Amazon homepage functionalities", () => {
         cy.visit("https://www.amazon.com/-/es/");
     })
 
-    // ----- Basic smoke testing ----- //
+    // ----- Smoke testing ----- //
 
     it("URL is correct and the page loads", () => {
         
@@ -49,7 +49,7 @@ describe("Testing Amazon homepage functionalities", () => {
         homepage.elements.navbarSell().contains("Vender");
     })
 
-    it.only("All navbar links are functioning", () => {
+    it("All navbar links are functioning", () => {
         homepage.elements.navbarLogo().click();
         cy.url().should("eq","https://www.amazon.com/-/es/ref=nav_logo");
         cy.go("back");
@@ -99,8 +99,57 @@ describe("Testing Amazon homepage functionalities", () => {
         cy.go("back");
     })
 
-    // ----- Slider ----- //
+    // ----- Homepage Categories ----- //
 
+    it("Main categories are present", () => {
+        cy.contains("Compra por Categoría");
+        cy.contains("Seleccionados en Belleza");
+        cy.contains("AmazonBasics");
+        cy.contains("Electrónicos");
+        cy.contains("Accesorios para juegos");
+        cy.contains("Computadoras y Accesorios");
+        cy.contains("Ofertas y Promociones");
+    })
 
+    // ----- Basic Functional Testing ----- //
+
+    it("Search a book by selecting books category from the search element", () => {
+        homepage.elements.navbarSearchCategory()
+        .select("search-alias=stripbooks-intl-ship", {force: true});
+        homepage.elements.navbarSearchCategory()
+        .contains("Libros");
+
+        homepage.elements.navbarSearch()
+        .click({force:true})
+        .type("Javascript");
+
+        homepage.elements.navbarGo()
+        .click()
+    })
+
+    it("Language is changed to English", () => {
+        cy.wait(5000);
+        cy.get("#icp-nav-flyout")
+        .trigger("mouseover");
+        
+        cy.get("a[href='#switch-lang=en_US']").first()
+        .click();
+
+        cy.url()
+        .should("eq","https://www.amazon.com/-/es/?language=en_US");
+    })
+
+    it.only("Add a product to the cart", () => {
+        cy.get("#desktop-grid-2")
+        .click()
+
+        cy.get(':nth-child(1) > .s-include-content-margin > .a-spacing-medium > [data-component-type="s-product-image"] > .a-link-normal > .a-section > .s-image')
+        .click();
+
+        cy.get('#add-to-cart-button')
+        .click();
+
+        cy.contains("Agregado al carrito");
+    })
 
 })
