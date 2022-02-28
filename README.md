@@ -19,3 +19,6 @@ The purpose of this project is to peform low level functional and E2E testing by
 - Clone this repository: <code>git clone https://github.com/iandav/amazon-automation-testing/</code>
 - Run <code>npm install</code> in the root folder
 - Execute tests <code>npx cypress run</code>
+
+## View tests
+If you are interested in how I wrote the test cases in JavaScript, go to "cypress/integration/amazon-homepage/homepage_tests.js"
