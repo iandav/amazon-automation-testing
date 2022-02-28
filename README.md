@@ -14,11 +14,11 @@ The purpose of this project is to peform low level functional and E2E testing by
 - Search functionality works well.
 - Verify Add to cart.
 
-## Execute tests
+## Execute tests & display results
 - Install [nodejs](https://nodejs.org)
 - Clone this repository: <code>git clone https://github.com/iandav/amazon-automation-testing/</code>
 - Run <code>npm install</code> in the root folder
 - Execute tests <code>npx cypress run</code>
 
-## View tests
-If you are interested in how I wrote the test cases in JavaScript, go to "cypress/integration/amazon-homepage/homepage_tests.js"
+## View tests (code)
+If you are interested in how I wrote the test cases in JavaScript, go to <code>"cypress/integration/amazon-homepage/homepage_tests.js"</code>
